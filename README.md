@@ -1,22 +1,38 @@
 # Gitable Picture
-This how mearge 2 diferent versions no original img.
+This is how to merge 2 different versions with an original image.
 
-# How it work
+# How it works
 ### 1. Check Size
-Check if all images ```(org, diff 1, diff 2)``` if they are same size.
+Check if all images `(org, diff 1, diff 2)` if they are same size.
 
 ### 2. Find git 
-Go thrue all pixels and go thrue this algorithm:
+Go through all pixels and apply this algorithm:
 
-**O** + **1** + **2** = **O**
-**O** + **1** = **2**
-**O** + **2** = **1**
-**2** + **1** = **1**
-**Else**: **Mearge Error**
+* **O** + **1** + **2** = **O**
+* **O** + **1** = **2**
+* **O** + **2** = **1**
+* **2** + **1** = **1**
+* **Else**: **Merge Error**
+
+- **0**: Original image
+- **1**: Diff 1
+- **2**: Diff 2
 
 ### 3. Create image 
-After find diff they are acreate a now img.
+After finding the differences, a new image is created.
 
+## Visualization
+Original image
+![ORG](./org.png)
+
+Diff 1
+![diff1](./diff_1.png)
+
+Diff 2
+![diff2](./diff_2.png)
+
+Output
+![out](./output.png)
 
 
 
