@@ -23,16 +23,16 @@ After finding the differences, a new image is created.
 
 ## Visualization
 Original image
-![ORG](./org.png)
+![ORG](./Example/org.png)
 
 Diff 1
-![diff1](./diff_1.png)
+![diff1](./Example/diff_1.png)
 
 Diff 2
-![diff2](./diff_2.png)
+![diff2](./Example/diff_2.png)
 
 Output
-![out](./output.png)
+![out](./Example/output.png)
 
 
 
