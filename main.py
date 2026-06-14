@@ -24,6 +24,22 @@ height, width, channels = img1.shape
 
 maps = []
 
+def find_diff(pxo, px1, px2):
+    diff1 = np.array_equal(pxo, px1)
+    diff2 = np.array_equal(pxo, px2) 
+    diffs = np.array_equal(px1, px2)
+
+    if diff1 and diff2:
+        return " "
+    elif diff1:
+        return "2"
+    elif diff2:
+        return "1"
+    elif diffs:
+        return "B"
+    else:
+        return "E"
+
 for x in range(height):
     maps.append([])
     for y in range(width):
@@ -31,25 +47,36 @@ for x in range(height):
         px1 = img1[x, y]
         px2 = img2[x, y]
         
-        diff1 = np.array_equal(pxo, px1)
-        diff2 = np.array_equal(pxo, px2) 
-        diffs = np.array_equal(px1, px2)
-
-        if diff1 and diff2:
-            maps[x].append(" ")
-        elif diff1:
-            maps[x].append("2")
-        elif diff2:
-            maps[x].append("1")
-        elif diffs:
-            maps[x].append("B")
-        else:
-            maps[x].append("E")
+        maps[x].append(find_diff(pxo, px1, px2))
 
 print(f"|{"-"*(width*2-1)}|")
 for i in maps:
     print(f"|{" ".join(i)}|")
 print(f"|{"-"*(width*2-1)}|")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
