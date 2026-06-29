@@ -1,30 +1,27 @@
 # Gitable Picture
-This is how to merge 2 different versions with an original image.
+Gitable Picture (GP) is a git extension for images. Main goal is to achieve origin+N image connection and low-cost image versioning. 
 
-# How it works
-### 1. Check Size
-Check if all images `org, diff 1, diff 2` if they are same size.
+# How work in history 
+In GP is original IMG in min repository. in history are stored only diffs. 
 
-### 2. Find git 
-Go through all pixels and apply this algorithm:
+If I need oldest ver off img I need to add on ORG img all diffs
 
-* **O** + **1** + **2** = **O**
-* **O** + **1** = **2**
-* **O** + **2** = **1**
-* **2** + **1** = **1**
-* **Else**: Merge Error
+# How to create diff
+1. Ad first we find diferencic between Original and different versions. 
+2. Around change places create bound box
+2.1 if one change is in top left and other on bottom right it is 2 boxis. 
+3. After we have all boxes we take from org ing in area of boundi box and same pixels in org and verN swap to alfa 255 (invisible)
+3.1 ve cen create visual diff by diff box switch if alfa > 0 = change. 
+4. Output is saved with as lossless img format with X, y position where on org img it si. 
 
-- **O**: Original image
-- **1**: Diff 1
-- **2**: Diff 2
+## notes
+1. In code we use row binary files, diff is only save as png.
 
-### 3. Create image 
-After finding the differences, a new image is created.
+# Why choose us? 
+1. We allow infinity version of img to be compressed to one. 
+2. We can create GIF of how your img changed
+3. We can create 3D representation of change history. 
+4. We offer free websites wher you can tast 3-way mearge on your machine locally with Web assembly. 
 
-## Visualization
-| **Original image** | **Diff 1** | **Diff 2** | **Output** |
-| :-: | :-: | :-: | :-: |
-| <img src="./Example/org.png" width="100" height=auto alt="ORG"> | <img src="./Example/diff_1.png" width="100" height=auto alt="Diff1"> | <img src="./Example/diff_2.png" width="100" height=auto alt="Diff2"> | <img src="./Example/output.png" width="100" height=auto alt="Out"> |
-
-### Creator
-[Msnehulak](https://github.com/Msnehulak) 2026
+# Progress 
+Onli idea
